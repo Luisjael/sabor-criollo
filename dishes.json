@@ -6,7 +6,7 @@
     "descripcion": "Puré de plátano verde con cebolla curtida, salami frito, queso frito y huevo.",
     "precio": "RD$380",
     "foto": null,
-    "modelo": null
+    "modelo": "models/mangu.glb"
   },
   {
     "id": "sancocho",
@@ -63,3 +63,4 @@
     "modelo": null
   }
 ]
+
