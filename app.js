@@ -168,6 +168,9 @@ function renderModel(media, dish) {
   mv.setAttribute("scale", "0.11 0.11 0.11");
   mv.setAttribute("exposure", "1.5");
   mv.setAttribute("shadow-intensity", "1");
+  mv.addEventListener("load", () => {
+    mv.activateAR();
+  });
   media.appendChild(mv);
 }
 
