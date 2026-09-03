@@ -23,8 +23,8 @@
     "nombre": "Pollo guisado con arroz y habichuelas",
     "descripcion": "Pollo guisado, arroz blanco, habichuelas, tostones, ensalada de repollo, tomate y aguacate.",
     "precio": "RD$450",
-    "foto": null,
-    "modelo": null
+    "foto": "photos/plato-tipico.jpg",
+    "modelo": "models/plato-tipico.glb"
   },
   {
     "id": "chivo",
@@ -63,4 +63,5 @@
     "modelo": null
   }
 ]
+
 
