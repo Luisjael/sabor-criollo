@@ -165,7 +165,7 @@ function renderModel(media, dish) {
   mv.setAttribute("ar-modes", "webxr scene-viewer quick-look");
   mv.setAttribute("ar-placement", "floor");
   mv.setAttribute("ar-scale", "auto");
-  mv.setAttribute("scale", "0.11 0.11 0.11");
+  mv.setAttribute("scale", "0.11 0.11 0.11");`n  mv.setAttribute("exposure", "1.5");`n  mv.setAttribute("shadow-intensity", "1");
   media.appendChild(mv);
 }
 
@@ -178,3 +178,4 @@ function slug(str) {
 }
 
 loadMenu();
+
