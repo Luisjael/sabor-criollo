@@ -1,0 +1,221 @@
+/* ============================================
+   Sabor Criollo — Design tokens
+   Inspired by Dominican colmado storefronts:
+   painted concrete walls, hand-lettered signs,
+   awning stripes, checkerboard tile floors.
+   ============================================ */
+:root{
+  --wall:        #0E5C55;   /* deep colmado teal wall */
+  --wall-dark:   #093F3A;
+  --brick:       #C1401F;   /* hand-painted sign red */
+  --brick-dark:  #9A2F16;
+  --mango:       #F0A63A;   /* mango / awning gold */
+  --cream:       #FBF3E1;   /* card / paint-chip cream */
+  --cream-dim:   #EFE4C8;
+  --ink:         #1C1A14;   /* near-black ink for text on cream */
+  --ink-soft:    #4A4436;
+
+  --font-display: 'Bungee', 'Arial Black', sans-serif;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+
+  --radius: 14px;
+  --shadow-card: 0 6px 0 rgba(0,0,0,.18);
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0;
+  background: var(--wall);
+  color: var(--cream);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:
+    radial-gradient(ellipse at top left, rgba(255,255,255,.06), transparent 55%),
+    var(--wall);
+  border-bottom: 10px solid var(--brick);
+  padding: 2.75rem 1.5rem 2.5rem;
+}
+.hero-inner{ max-width: 720px; margin: 0 auto; }
+.brand{
+  display:flex; align-items:center; gap:.5rem;
+  margin-bottom: 1.75rem;
+}
+.brand-mark{ font-size:1.4rem; }
+.brand-name{
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: .02em;
+  color: var(--mango);
+}
+.hero-title{
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 9vw, 4.2rem);
+  line-height: .98;
+  margin: 0 0 1.1rem;
+  color: var(--cream);
+  text-shadow: 3px 3px 0 var(--brick-dark);
+}
+.hero-sub{
+  max-width: 46ch;
+  font-size: 1.02rem;
+  color: var(--cream-dim);
+  margin: 0 0 1.4rem;
+}
+.hero-badge{
+  display: inline-block;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--wall-dark);
+  background: var(--mango);
+  padding: .5rem .9rem;
+  border-radius: 999px;
+}
+
+/* ---------- Category nav (awning stripes) ---------- */
+.category-nav{
+  position: sticky; top:0; z-index: 20;
+  display:flex; gap:.5rem; overflow-x:auto;
+  padding: .85rem 1.25rem;
+  background: repeating-linear-gradient(
+    90deg, var(--brick) 0 28px, var(--brick-dark) 28px 56px
+  );
+  border-bottom: 4px solid var(--wall-dark);
+  scrollbar-width: none;
+}
+.category-nav::-webkit-scrollbar{ display:none; }
+.category-nav button{
+  flex: 0 0 auto;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: .88rem;
+  color: var(--cream);
+  background: rgba(0,0,0,.22);
+  border: 2px solid rgba(255,255,255,.35);
+  border-radius: 999px;
+  padding: .45rem 1rem;
+  cursor:pointer;
+  transition: transform .15s ease, background .15s ease;
+}
+.category-nav button:hover{ background: rgba(0,0,0,.35); }
+.category-nav button.active{
+  background: var(--cream);
+  color: var(--brick-dark);
+  border-color: var(--cream);
+  transform: translateY(-1px);
+}
+
+/* ---------- Menu sections ---------- */
+main{ max-width: 1080px; margin: 0 auto; padding: 2.25rem 1.25rem 3rem; }
+.category-section{ margin-bottom: 2.75rem; scroll-margin-top: 4.5rem; }
+.category-heading{
+  display:flex; align-items:center; gap: .85rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--mango);
+  margin: 0 0 1.1rem;
+}
+.category-heading::after{
+  content:"";
+  flex:1;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, currentColor 0 8px, transparent 8px 16px);
+  opacity:.5;
+}
+
+.dish-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.4rem;
+}
+
+/* ---------- Dish card ---------- */
+.dish-card{
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: var(--shadow-card);
+  display:flex; flex-direction:column;
+}
+.dish-media{
+  position:relative;
+  aspect-ratio: 4/3;
+  background: var(--cream-dim);
+}
+.dish-media img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.dish-media model-viewer{
+  width:100%; height:100%; display:block;
+  --poster-color: transparent;
+}
+.dish-placeholder{
+  width:100%; height:100%;
+  display:flex; align-items:center; justify-content:center;
+}
+.dish-placeholder svg{ width: 46%; height: 46%; opacity:.55; }
+.foto-pill{
+  position:absolute; left:.7rem; bottom:.7rem;
+  font-size:.68rem; font-weight:700; letter-spacing:.02em;
+  background: var(--ink);
+  color: var(--cream);
+  padding: .25rem .55rem;
+  border-radius: 999px;
+  opacity:.85;
+}
+
+.dish-body{ padding: 1rem 1.1rem 1.15rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+.dish-name-row{ display:flex; justify-content:space-between; gap: .75rem; align-items:baseline; }
+.dish-name{ font-weight:700; font-size:1.02rem; margin:0; }
+.dish-price{ font-weight:700; color: var(--brick-dark); white-space:nowrap; }
+.dish-desc{ font-size:.9rem; color: var(--ink-soft); margin:0; flex:1; }
+
+.dish-action{
+  margin-top:.35rem;
+  width:100%;
+  font-family: var(--font-body);
+  font-weight:700;
+  font-size:.86rem;
+  padding:.65rem .9rem;
+  border-radius: 999px;
+  border: 2px solid var(--brick);
+  background: transparent;
+  color: var(--brick-dark);
+  cursor:pointer;
+  transition: background .15s ease, color .15s ease;
+}
+.dish-action:hover{ background: var(--brick); color: var(--cream); }
+.dish-action[disabled]{
+  border-color: var(--cream-dim);
+  color: var(--ink-soft);
+  cursor:default;
+  opacity:.7;
+}
+.dish-action[disabled]:hover{ background:transparent; color: var(--ink-soft); }
+.dish-action.is-viewing{ background: var(--brick); color: var(--cream); }
+
+/* ---------- Footer ---------- */
+.site-footer{
+  text-align:center;
+  padding: 1.75rem 1rem 2.25rem;
+  font-size:.82rem;
+  color: var(--cream-dim);
+}
+.site-footer strong{ color: var(--mango); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px){
+  .hero{ padding: 2.25rem 1.1rem 2rem; }
+  main{ padding: 1.75rem 1rem 2.5rem; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  .category-nav button{ transition:none; }
+}

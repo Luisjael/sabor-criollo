@@ -1,0 +1,65 @@
+[
+  {
+    "id": "mangu",
+    "categoria": "Mañana",
+    "nombre": "Mangú con los tres golpes",
+    "descripcion": "Puré de plátano verde con cebolla curtida, salami frito, queso frito y huevo.",
+    "precio": "RD$380",
+    "foto": null,
+    "modelo": null
+  },
+  {
+    "id": "sancocho",
+    "categoria": "Fuertes",
+    "nombre": "Sancocho de siete carnes",
+    "descripcion": "Guiso espeso de siete cortes de carne, víveres y ají cubanela, cocido lento por horas.",
+    "precio": "RD$550",
+    "foto": null,
+    "modelo": null
+  },
+  {
+    "id": "plato-tipico",
+    "categoria": "Fuertes",
+    "nombre": "Pollo guisado con arroz y habichuelas",
+    "descripcion": "Pollo guisado, arroz blanco, habichuelas, tostones, ensalada de repollo, tomate y aguacate.",
+    "precio": "RD$450",
+    "foto": null,
+    "modelo": null
+  },
+  {
+    "id": "chivo",
+    "categoria": "Fuertes",
+    "nombre": "Chivo guisado picante",
+    "descripcion": "Chivo criollo marinado en ron y ajo, guisado picante al estilo del Sur.",
+    "precio": "RD$520",
+    "foto": null,
+    "modelo": null
+  },
+  {
+    "id": "pescado-frito",
+    "categoria": "Fuertes",
+    "nombre": "Pescado frito con tostones",
+    "descripcion": "Pescado entero frito, crocante por fuera, con tostones y ensalada verde.",
+    "precio": "RD$480",
+    "foto": null,
+    "modelo": null
+  },
+  {
+    "id": "chicharron",
+    "categoria": "Frituras",
+    "nombre": "Chicharrón de cerdo",
+    "descripcion": "Cuero y carne de cerdo fritos hasta quedar dorados y crujientes.",
+    "precio": "RD$320",
+    "foto": null,
+    "modelo": null
+  },
+  {
+    "id": "habichuelas-con-dulce",
+    "categoria": "Postre",
+    "nombre": "Habichuelas con dulce",
+    "descripcion": "Dulce de habichuelas rojas, leche de coco, batata, canela y galletitas de leche.",
+    "precio": "RD$180",
+    "foto": null,
+    "modelo": null
+  }
+]
