@@ -15,7 +15,7 @@
     "descripcion": "Guiso espeso de siete cortes de carne, víveres y ají cubanela, cocido lento por horas.",
     "precio": "RD$550",
     "foto": null,
-    "modelo": null
+    "modelo": "models/sancocho.glb"
   },
   {
     "id": "plato-tipico",
@@ -63,5 +63,6 @@
     "modelo": null
   }
 ]
+
 
 
