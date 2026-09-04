@@ -2,10 +2,10 @@ const CATEGORY_ORDER = ["Mañana", "Fuertes", "Frituras", "Postre", "Bebidas"];
 
 const PLACEHOLDER_SVG = `
 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="42" stroke="#C15B36" stroke-width="2" opacity=".3"/>
-  <circle cx="50" cy="50" r="26" fill="#C15B36" opacity=".18"/>
+  <circle cx="50" cy="50" r="42" stroke="#B5502E" stroke-width="2" opacity=".28"/>
+  <circle cx="50" cy="50" r="26" fill="#B5502E" opacity=".12"/>
   <path d="M38 30 q2 -8 4 0 M50 27 q2 -9 4 0 M62 30 q2 -8 4 0"
-        stroke="#C15B36" stroke-width="2.4" stroke-linecap="round" opacity=".4"/>
+        stroke="#B5502E" stroke-width="2.4" stroke-linecap="round" opacity=".38"/>
 </svg>`;
 
 async function loadMenu() {

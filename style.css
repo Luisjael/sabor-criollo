@@ -1,14 +1,14 @@
 /* ============================================
-   Sabor Criollo — Design tokens (v4: dark, calm, one accent)
+   Sabor Criollo — Design tokens (v5: light, calm, one accent)
    ============================================ */
 :root{
-  --bg:          #17130F;   /* warm near-black */
-  --surface:     #221C16;
-  --border:      #332B22;
-  --ink:         #F2EADC;   /* primary text on dark */
-  --ink-soft:    #9C8F7C;   /* secondary text */
-  --rust:        #C15B36;   /* single accent */
-  --rust-soft:   rgba(193,91,54,.14);
+  --bg:          #FBF8F3;   /* warm off-white */
+  --surface:     #FFFFFF;
+  --border:      #E7DFD2;
+  --ink:         #221A12;   /* primary text */
+  --ink-soft:    #8A7E6C;   /* secondary text */
+  --rust:        #B5502E;   /* single accent */
+  --rust-soft:   rgba(181,80,46,.10);
 
   --font: 'Manrope', system-ui, -apple-system, sans-serif;
 
@@ -67,7 +67,7 @@ body{
   font-weight: 600;
   font-size: .83rem;
   color: var(--ink-soft);
-  background: transparent;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: .4rem .9rem;
@@ -85,8 +85,7 @@ main{ max-width: var(--max-w); margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
 .category-section{ margin-bottom: 2rem; scroll-margin-top: 4rem; }
 .category-heading{
   font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: -.005em;
+  font-size: .85rem;
   color: var(--ink-soft);
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -126,12 +125,12 @@ main{ max-width: var(--max-w); margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
   width:100%; height:100%;
   display:flex; align-items:center; justify-content:center;
 }
-.dish-placeholder svg{ width: 40%; height: 40%; opacity:.4; }
+.dish-placeholder svg{ width: 40%; height: 40%; opacity:.45; }
 .foto-pill{
   position:absolute; left:.65rem; bottom:.65rem;
   font-size:.65rem; font-weight:600; letter-spacing:.02em;
-  background: rgba(0,0,0,.55);
-  color: var(--ink-soft);
+  background: rgba(34,26,18,.78);
+  color: #fff;
   padding: .2rem .5rem;
   border-radius: 999px;
 }
