@@ -33,7 +33,7 @@
     "descripcion": "Chivo criollo marinado en ron y ajo, guisado picante al estilo del Sur.",
     "precio": "RD$520",
     "foto": null,
-    "modelo": null
+    "modelo": "models/chivo.glb"
   },
   {
     "id": "pescado-frito",
@@ -63,6 +63,7 @@
     "modelo": null
   }
 ]
+
 
 
 
