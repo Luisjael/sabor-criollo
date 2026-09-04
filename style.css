@@ -32,26 +32,31 @@ body{
 
 /* ---------- Header ---------- */
 .hero{
-  padding: 1.6rem 1.25rem 1.1rem;
-  max-width: var(--max-w);
-  margin: 0 auto;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 1.9rem 1.25rem 2.1rem;
+  border-radius: 0 0 28px 28px;
+  margin-bottom: .25rem;
 }
-.hero-inner{ display:flex; flex-direction:column; gap:.4rem; }
-.brand{ display:flex; align-items:center; gap:.45rem; }
-.brand-mark{ font-size:1.15rem; }
+.hero-inner{
+  display:flex; flex-direction:column; gap:.5rem;
+  max-width: var(--max-w); margin: 0 auto;
+}
+.brand{ display:flex; align-items:center; gap:.5rem; }
+.brand-mark{ font-size:1.3rem; }
 .brand-name{
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   letter-spacing: -.01em;
-  color: var(--ink);
+  color: var(--bg);
 }
 .hero-sub{
-  font-size: .92rem;
-  color: var(--ink-soft);
+  font-size: .94rem;
+  color: rgba(250,245,236,.72);
   margin: 0;
   max-width: 46ch;
 }
-.hero-sub strong{ color: var(--rust-dark); }
+.hero-sub strong{ color: var(--gold-light, #E3B65C); }
 
 /* ---------- Category nav ---------- */
 .category-nav{
@@ -80,17 +85,26 @@ body{
   background: var(--rust);
   color: #fff;
   border-color: var(--rust);
+  box-shadow: 0 3px 10px rgba(181,75,43,.35);
 }
 
 /* ---------- Menu sections ---------- */
 main{ max-width: var(--max-w); margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
 .category-section{ margin-bottom: 2rem; scroll-margin-top: 4rem; }
 .category-heading{
+  display:flex; align-items:center; gap:.5rem;
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   letter-spacing: -.01em;
-  color: var(--rust-dark);
+  color: var(--ink);
   margin: 0 0 .85rem;
+}
+.category-heading::before{
+  content:"";
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--rust);
+  flex: none;
 }
 
 .dish-grid{
@@ -110,6 +124,11 @@ main{ max-width: var(--max-w); margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
   overflow:hidden;
   box-shadow: var(--shadow);
   display:flex; flex-direction:column;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.dish-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 4px 4px rgba(36,29,20,.06), 0 12px 22px rgba(36,29,20,.1);
 }
 .dish-media{
   position:relative;
@@ -140,31 +159,41 @@ main{ max-width: var(--max-w); margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
 .dish-body{ padding: .95rem 1rem 1.05rem; display:flex; flex-direction:column; gap:.4rem; flex:1; }
 .dish-name-row{ display:flex; justify-content:space-between; gap: .6rem; align-items:baseline; }
 .dish-name{ font-weight:700; font-size:.98rem; margin:0; letter-spacing:-.005em; }
-.dish-price{ font-weight:800; font-size:.92rem; color: var(--rust-dark); white-space:nowrap; }
+.dish-price{
+  font-weight:800;
+  font-size:.8rem;
+  color: #fff;
+  background: var(--rust);
+  padding: .18rem .55rem;
+  border-radius: 999px;
+  white-space:nowrap;
+}
 .dish-desc{ font-size:.85rem; color: var(--ink-soft); margin:0; flex:1; }
 
 .dish-action{
   margin-top:.4rem;
   width:100%;
   font-family: var(--font);
-  font-weight:700;
+  font-weight:800;
   font-size:.86rem;
-  padding:.7rem .9rem;
-  border-radius: var(--radius-sm);
+  padding:.75rem .9rem;
+  border-radius: 999px;
   border: none;
   background: var(--rust);
   color: #fff;
   cursor:pointer;
-  transition: background .15s ease, opacity .15s ease;
+  box-shadow: 0 4px 12px rgba(181,75,43,.35);
+  transition: background .15s ease, transform .1s ease, box-shadow .15s ease;
 }
-.dish-action:hover{ background: var(--rust-dark); }
+.dish-action:hover{ background: var(--rust-dark); transform: translateY(-1px); }
 .dish-action[disabled]{
   background: var(--border);
   color: var(--ink-soft);
   cursor:default;
+  box-shadow:none;
 }
-.dish-action[disabled]:hover{ background: var(--border); }
-.dish-action.is-viewing{ background: var(--ink); }
+.dish-action[disabled]:hover{ background: var(--border); transform:none; }
+.dish-action.is-viewing{ background: var(--ink); box-shadow: 0 4px 12px rgba(36,29,20,.3); }
 
 /* ---------- Footer ---------- */
 .site-footer{
