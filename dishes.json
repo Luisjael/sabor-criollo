@@ -52,7 +52,7 @@
     "descripcion": "Cuero y carne de cerdo fritos hasta quedar dorados y crujientes.",
     "precio": "RD$320",
     "foto": null,
-    "modelo": null
+    "modelo": "models/chicharron.glb"
   },
   {
     "id": "habichuelas-con-dulce",
@@ -64,6 +64,7 @@
     "modelo": null
   }
 ]
+
 
 
 
