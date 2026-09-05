@@ -18,13 +18,14 @@
     "modelo": "models/sancocho.glb"
   },
   {
-    "id": "plato-tipico",
-    "categoria": "Fuertes",
-    "nombre": "Pollo guisado con arroz y habichuelas",
-    "descripcion": "Pollo guisado, arroz blanco, habichuelas, tostones, ensalada de repollo, tomate y aguacate.",
-    "precio": "RD$450",
-    "foto": "photos/plato-tipico.jpg",
-    "modelo": "models/plato-tipico.glb"
+  "id": "la-bandera",
+  "categoria": "Fuertes",
+  "nombre": "La Bandera Dominicana",
+  "descripcion": "Arroz blanco, habichuelas guisadas, carne y ensalada — el plato criollo por excelencia.",
+  "precio": "RD$450",
+  "foto": null,
+  "modelo": "models/la-bandera.glb"
+
   },
   {
     "id": "chivo",
