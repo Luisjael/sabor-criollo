@@ -42,7 +42,7 @@
     "descripcion": "Pescado entero frito, crocante por fuera, con tostones y ensalada verde.",
     "precio": "RD$480",
     "foto": null,
-    "modelo": null
+    "modelo": "models/pescado-frito.glb"
   },
   {
     "id": "chicharron",
@@ -63,6 +63,7 @@
     "modelo": null
   }
 ]
+
 
 
 
