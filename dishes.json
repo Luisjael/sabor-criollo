@@ -5,7 +5,7 @@
     "nombre": "Mangú con los tres golpes",
     "descripcion": "Puré de plátano verde con cebolla curtida, salami frito, queso frito y huevo.",
     "precio": "RD$380",
-    "foto": null,
+    "foto": "photos/mangu.jpg",
     "modelo": "models/mangu.glb"
   },
   {
