@@ -33,7 +33,7 @@
     "nombre": "Chivo guisado picante",
     "descripcion": "Chivo criollo marinado en ron y ajo, guisado picante al estilo del Sur.",
     "precio": "RD$520",
-    "foto": null,
+    "foto": "photos/chivo.jpg",
     "modelo": "models/chivo.glb"
   },
   {
@@ -42,7 +42,7 @@
     "nombre": "Pescado frito con tostones",
     "descripcion": "Pescado entero frito, crocante por fuera, con tostones y ensalada verde.",
     "precio": "RD$480",
-    "foto": null,
+    "foto": "photos/pescado-frito.jpg",
     "modelo": "models/pescado-frito.glb"
   },
   {
@@ -51,7 +51,7 @@
     "nombre": "Chicharrón de cerdo",
     "descripcion": "Cuero y carne de cerdo fritos hasta quedar dorados y crujientes.",
     "precio": "RD$320",
-    "foto": null,
+    "foto": "photos/chicharron.jpg",
     "modelo": "models/chicharron.glb"
   },
   {
