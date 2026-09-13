@@ -9,11 +9,20 @@ const PLACEHOLDER_SVG = `
 </svg>`;
 
 async function loadMenu() {
-  const res = await fetch("dishes.json");
-  const dishes = await res.json();
-  const byCategory = groupByCategory(dishes);
-  renderNav(byCategory);
-  renderMenu(byCategory);
+  const main = document.getElementById("menu");
+  try {
+    const res = await fetch("dishes.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const dishes = await res.json();
+    const byCategory = groupByCategory(dishes);
+    renderNav(byCategory);
+    renderMenu(byCategory);
+  } catch (err) {
+    console.error("No se pudo cargar el menú:", err);
+    main.innerHTML =
+      '<p class="load-error">No pudimos cargar el menú en este momento. ' +
+      "Revisa tu conexión e intenta de nuevo.</p>";
+  }
 }
 
 function groupByCategory(dishes) {
@@ -77,20 +86,13 @@ function renderCard(dish) {
   const media = document.createElement("div");
   media.className = "dish-media";
 
-  if (dish.foto) {
-    const img = document.createElement("img");
-    img.src = dish.foto;
-    img.alt = dish.nombre;
-    media.appendChild(img);
-  } else {
-    const ph = document.createElement("div");
-    ph.className = "dish-placeholder";
-    ph.innerHTML = PLACEHOLDER_SVG;
-    media.appendChild(ph);
-    const pill = document.createElement("span");
-    pill.className = "foto-pill";
-    pill.textContent = "FOTO PRÓXIMAMENTE";
-    media.appendChild(pill);
+  renderPhotoOrPlaceholder(media, dish, { showPill: true });
+
+  if (dish.modelo) {
+    const badge = document.createElement("span");
+    badge.className = "model-badge";
+    badge.textContent = "3D";
+    media.appendChild(badge);
   }
 
   const body = document.createElement("div");
@@ -131,7 +133,13 @@ function toggleAR(button, media, dish) {
   if (viewing) {
     button.classList.remove("is-viewing");
     button.textContent = "Ver en mi mesa (AR)";
-    renderPhotoOrPlaceholder(media, dish);
+    renderPhotoOrPlaceholder(media, dish, { showPill: true });
+    if (dish.modelo) {
+      const badge = document.createElement("span");
+      badge.className = "model-badge";
+      badge.textContent = "3D";
+      media.appendChild(badge);
+    }
   } else {
     button.classList.add("is-viewing");
     button.textContent = "Volver a la foto";
@@ -139,18 +147,25 @@ function toggleAR(button, media, dish) {
   }
 }
 
-function renderPhotoOrPlaceholder(media, dish) {
+function renderPhotoOrPlaceholder(media, dish, { showPill = false } = {}) {
   media.innerHTML = "";
   if (dish.foto) {
     const img = document.createElement("img");
     img.src = dish.foto;
     img.alt = dish.nombre;
+    img.loading = "lazy";
     media.appendChild(img);
   } else {
     const ph = document.createElement("div");
     ph.className = "dish-placeholder";
     ph.innerHTML = PLACEHOLDER_SVG;
     media.appendChild(ph);
+    if (showPill) {
+      const pill = document.createElement("span");
+      pill.className = "foto-pill";
+      pill.textContent = "FOTO PRÓXIMAMENTE";
+      media.appendChild(pill);
+    }
   }
 }
 
@@ -158,9 +173,11 @@ function renderModel(media, dish) {
   media.innerHTML = "";
   const mv = document.createElement("model-viewer");
   mv.setAttribute("src", dish.modelo);
-  mv.setAttribute("alt", dish.nombre);
+  mv.setAttribute("alt", `Modelo 3D de ${dish.nombre}`);
+  if (dish.foto) mv.setAttribute("poster", dish.foto);
   mv.setAttribute("camera-controls", "");
   mv.setAttribute("auto-rotate", "");
+  mv.setAttribute("touch-action", "pan-y");
   mv.setAttribute("ar", "");
   mv.setAttribute("ar-modes", "webxr scene-viewer quick-look");
   mv.setAttribute("ar-placement", "floor");
@@ -168,9 +185,36 @@ function renderModel(media, dish) {
   mv.setAttribute("scale", "0.11 0.11 0.11");
   mv.setAttribute("exposure", "1.5");
   mv.setAttribute("shadow-intensity", "1");
+
+  // Botón propio de AR de model-viewer (solo se muestra en dispositivos con AR).
+  const arButton = document.createElement("button");
+  arButton.className = "ar-button";
+  arButton.setAttribute("slot", "ar-button");
+  arButton.textContent = "Ver en mi mesa (AR)";
+  mv.appendChild(arButton);
+
+  // Al cargar: en un celular con AR, va directo a tu mesa. En computadora,
+  // muestra el 3D girable con un aviso para abrirlo en el teléfono.
   mv.addEventListener("load", () => {
-    mv.activateAR();
+    if (mv.canActivateAR) {
+      mv.activateAR();
+    } else {
+      const hint = document.createElement("span");
+      hint.className = "foto-pill ar-hint";
+      hint.textContent = "📱 Ábrelo en tu celular para verlo en tu mesa";
+      media.appendChild(hint);
+    }
   });
+
+  // Mensaje si el modelo no carga.
+  mv.addEventListener("error", () => {
+    renderPhotoOrPlaceholder(media, dish);
+    const msg = document.createElement("span");
+    msg.className = "foto-pill";
+    msg.textContent = "No se pudo cargar el 3D";
+    media.appendChild(msg);
+  });
+
   media.appendChild(mv);
 }
 

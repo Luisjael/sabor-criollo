@@ -134,6 +134,27 @@ main{ max-width: var(--max-w); margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
   padding: .2rem .5rem;
   border-radius: 999px;
 }
+.model-badge{
+  position:absolute; right:.65rem; top:.65rem;
+  font-size:.62rem; font-weight:800; letter-spacing:.04em;
+  background: var(--rust);
+  color: #fff;
+  padding: .18rem .45rem;
+  border-radius: 999px;
+  pointer-events:none;
+}
+.ar-button{
+  position:absolute; left:50%; bottom:.75rem; transform:translateX(-50%);
+  font-family: var(--font); font-weight:700; font-size:.8rem;
+  background: var(--rust); color:#fff;
+  border:none; border-radius:999px;
+  padding:.5rem .95rem; cursor:pointer;
+  box-shadow: 0 2px 8px rgba(34,26,18,.25);
+}
+.load-error{
+  text-align:center; color: var(--ink-soft);
+  padding: 2rem 1rem; font-size:.9rem;
+}
 
 .dish-body{ padding: .9rem 1rem 1rem; display:flex; flex-direction:column; gap:.4rem; flex:1; }
 .dish-name-row{ display:flex; justify-content:space-between; gap: .6rem; align-items:baseline; }
