@@ -183,8 +183,12 @@ function renderModel(media, dish) {
   mv.setAttribute("ar-placement", "floor");
   mv.setAttribute("ar-scale", "auto");
   mv.setAttribute("scale", "0.11 0.11 0.11");
-  mv.setAttribute("exposure", "1.5");
+  // Iluminación realista: entorno neutro integrado + tone mapping + sombra suave.
+  mv.setAttribute("environment-image", "neutral");
+  mv.setAttribute("tone-mapping", "aces");
+  mv.setAttribute("exposure", "1.1");
   mv.setAttribute("shadow-intensity", "1");
+  mv.setAttribute("shadow-softness", "0.8");
 
   // Botón propio de AR de model-viewer (solo se muestra en dispositivos con AR).
   const arButton = document.createElement("button");
