@@ -134,6 +134,27 @@ main{ max-width: var(--max-w); margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
   padding: .2rem .5rem;
   border-radius: 999px;
 }
+.model-badge{
+  position:absolute; right:.65rem; top:.65rem;
+  font-size:.62rem; font-weight:800; letter-spacing:.04em;
+  background: var(--rust);
+  color: #fff;
+  padding: .18rem .45rem;
+  border-radius: 999px;
+  pointer-events:none;
+}
+.ar-button{
+  position:absolute; left:50%; bottom:.75rem; transform:translateX(-50%);
+  font-family: var(--font); font-weight:700; font-size:.8rem;
+  background: var(--rust); color:#fff;
+  border:none; border-radius:999px;
+  padding:.5rem .95rem; cursor:pointer;
+  box-shadow: 0 2px 8px rgba(34,26,18,.25);
+}
+.load-error{
+  text-align:center; color: var(--ink-soft);
+  padding: 2rem 1rem; font-size:.9rem;
+}
 
 .dish-body{ padding: .9rem 1rem 1rem; display:flex; flex-direction:column; gap:.4rem; flex:1; }
 .dish-name-row{ display:flex; justify-content:space-between; gap: .6rem; align-items:baseline; }
@@ -179,4 +200,67 @@ main{ max-width: var(--max-w); margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   .category-nav button{ transition:none; }
+}
+
+/* ---------- AR consent overlay ---------- */
+.ar-consent-overlay{
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(34,26,18,.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.25rem;
+  animation: fadeIn .18s ease;
+}
+.ar-consent-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-width: 340px; width: 100%;
+  padding: 1.4rem 1.25rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(34,26,18,.18);
+}
+.ar-consent-card img{
+  width: 88px; height: 88px; object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  margin-bottom: .75rem;
+}
+.ar-consent-card h3{ margin: 0 0 .4rem; font-size: 1rem; letter-spacing: -.01em; }
+.ar-consent-card p{
+  margin: 0 0 1.1rem;
+  font-size: .84rem;
+  color: var(--ink-soft);
+}
+.ar-consent-actions{ display: flex; gap: .5rem; }
+.ar-consent-actions button{
+  flex: 1;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: .85rem;
+  padding: .6rem .8rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--ink-soft);
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.ar-consent-actions .btn-primary{
+  background: var(--rust);
+  border-color: var(--rust);
+  color: #fff;
+}
+.ar-consent-actions .btn-primary:hover{ background: #9c4226; }
+.ar-consent-actions .btn-secondary:hover{
+  border-color: var(--ink-soft);
+  color: var(--ink);
+}
+
+@keyframes fadeIn{ from{ opacity: 0; } to{ opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce){
+  .ar-consent-overlay{ animation: none; }
+  .ar-consent-actions button{ transition: none; }
 }

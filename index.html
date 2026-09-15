@@ -4,11 +4,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sabor Criollo — El menú que se sirve en tu mesa</title>
+<meta name="description" content="Menú digital de Sabor Criollo: toca “Ver en mi mesa” en cualquier plato para verlo en 3D real sobre tu mesa con la cámara de tu teléfono.">
+<meta name="theme-color" content="#B5502E">
+
+<!-- Open Graph (para cuando comparten el link del menú) -->
+<meta property="og:title" content="Sabor Criollo — El menú que se sirve en tu mesa">
+<meta property="og:description" content="Mira los platos en 3D real sobre tu mesa antes de pedir.">
+<meta property="og:type" content="website">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Sabor Criollo">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<!-- model-viewer con fallback entre CDNs. Si ambos fallan, app.js muestra un aviso. -->
+<script>
+(function () {
+  var sources = [
+    "https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js",
+    "https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer.min.js"
+  ];
+  function tryLoad(i) {
+    if (i >= sources.length) {
+      document.dispatchEvent(new Event("modelviewer-failed"));
+      return;
+    }
+    var s = document.createElement("script");
+    s.type = "module";
+    s.src = sources[i];
+    s.onerror = function () { tryLoad(i + 1); };
+    document.head.appendChild(s);
+  }
+  tryLoad(0);
+})();
+</script>
 </head>
 <body>
 

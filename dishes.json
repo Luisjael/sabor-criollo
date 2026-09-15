@@ -4,7 +4,8 @@
     "categoria": "Mañana",
     "nombre": "Mangú con los tres golpes",
     "descripcion": "Puré de plátano verde con cebolla curtida, salami frito, queso frito y huevo.",
-    "precio": "RD$380",
+    "precio": 380,
+    "moneda": "RD$",
     "foto": "photos/mangu.jpg",
     "modelo": "models/mangu.glb"
   },
@@ -13,26 +14,28 @@
     "categoria": "Fuertes",
     "nombre": "Sancocho de siete carnes",
     "descripcion": "Guiso espeso de siete cortes de carne, víveres y ají cubanela, cocido lento por horas.",
-    "precio": "RD$550",
+    "precio": 550,
+    "moneda": "RD$",
     "foto": "photos/sancocho.jpg",
     "modelo": "models/sancocho.glb"
   },
   {
-  "id": "la-bandera",
-  "categoria": "Fuertes",
-  "nombre": "La Bandera Dominicana",
-  "descripcion": "Arroz blanco, habichuelas guisadas, carne y ensalada — el plato criollo por excelencia.",
-  "precio": "RD$450",
-  "foto": "photos/la-bandera.jpg",
-  "modelo": "models/la-bandera.glb"
-
+    "id": "la-bandera",
+    "categoria": "Fuertes",
+    "nombre": "La Bandera Dominicana",
+    "descripcion": "Arroz blanco, habichuelas guisadas, carne y ensalada — el plato criollo por excelencia.",
+    "precio": 450,
+    "moneda": "RD$",
+    "foto": "photos/la-bandera.jpg",
+    "modelo": "models/la-bandera.glb"
   },
   {
     "id": "chivo",
     "categoria": "Fuertes",
     "nombre": "Chivo guisado picante",
     "descripcion": "Chivo criollo marinado en ron y ajo, guisado picante al estilo del Sur.",
-    "precio": "RD$520",
+    "precio": 520,
+    "moneda": "RD$",
     "foto": "photos/chivo.jpg",
     "modelo": "models/chivo.glb"
   },
@@ -41,16 +44,28 @@
     "categoria": "Fuertes",
     "nombre": "Pescado frito con tostones",
     "descripcion": "Pescado entero frito, crocante por fuera, con tostones y ensalada verde.",
-    "precio": "RD$480",
+    "precio": 480,
+    "moneda": "RD$",
     "foto": "photos/pescado-frito.jpg",
     "modelo": "models/pescado-frito.glb"
+  },
+  {
+    "id": "plato-tipico",
+    "categoria": "Fuertes",
+    "nombre": "Plato Típico Criollo",
+    "descripcion": "Arroz, habichuelas, carne guisada, tajadas y ensalada — la combinación casera del día.",
+    "precio": 420,
+    "moneda": "RD$",
+    "foto": "photos/plato-tipico.jpg",
+    "modelo": "models/plato-tipico.glb"
   },
   {
     "id": "chicharron",
     "categoria": "Frituras",
     "nombre": "Chicharrón de cerdo",
     "descripcion": "Cuero y carne de cerdo fritos hasta quedar dorados y crujientes.",
-    "precio": "RD$320",
+    "precio": 320,
+    "moneda": "RD$",
     "foto": "photos/chicharron.jpg",
     "modelo": "models/chicharron.glb"
   },
@@ -59,14 +74,9 @@
     "categoria": "Postre",
     "nombre": "Habichuelas con dulce",
     "descripcion": "Dulce de habichuelas rojas, leche de coco, batata, canela y galletitas de leche.",
-    "precio": "RD$180",
+    "precio": 180,
+    "moneda": "RD$",
     "foto": null,
     "modelo": null
   }
 ]
-
-
-
-
-
-
